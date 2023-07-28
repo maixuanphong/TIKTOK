@@ -1,0 +1,107 @@
+.wrapper {
+    --search-border-radius: 92px;
+    height: var(--default-layout-header-height);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 12%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.content {
+    height: 100%;
+    width: var(--default-layout-width-content);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+}
+
+.search {
+    --search-height: 46px;
+    --top-space: 9px;
+    width: 361px;
+    height: var(--search-height);
+    position: relative;
+    background-color: #f1f1f2;
+    border-radius: var(--search-border-radius);
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+    border: 1px solid transparent;
+    &:focus-within {
+        border-color: rgba(
+            22,
+            24,
+            35,
+            0.2
+        ); // khi ta focus vào thì sẽ hiện border
+    }
+}
+
+.input {
+    border: none;
+    outline: none;
+    background-color: unset;
+    font-size: 1.6rem;
+    color: #828282;
+    padding: 12px 0;
+    flex: 1;
+    caret-color: var(--primary-Color);
+    &:not(:placeholder-shown) ~ .search-btn {
+        color: var(--text-color);
+    }
+}
+
+.clear,
+.loading {
+    position: absolute;
+    right: 52px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: rgb(166, 167, 171);
+    padding-right: 14px;
+}
+
+.clear {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.loading {
+    display: none;
+}
+
+.search-btn {
+    position: relative;
+    width: 52px;
+    height: 100%;
+    outline: none;
+    border: none;
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    font-size: 1.8rem;
+    color: rgba(22, 24, 35, 0.3);
+    &:hover {
+        background-color: rgb(225, 223, 223);
+        cursor: pointer;
+    }
+
+    &::before {
+        position: absolute;
+        left: 0;
+        top: var(--top-space);
+        display: block;
+        content: '';
+        width: 1px;
+        height: calc(var(--search-height) - var(--top-space) * 2);
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
