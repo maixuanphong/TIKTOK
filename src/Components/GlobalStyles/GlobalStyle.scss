@@ -1,13 +1,16 @@
 @import 'normalize.css'; // để reset css
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
 :root {
     --primary-Color: #fe2c55;
-    --black: #000;
-    --text-color: #333;
+    --black-color: #000;
+    --text-color: #161823;
+    --white-color: #fff;
 
     // defaultLayout
     --default-layout-header-height: 60px;
     --default-layout-width-content: 1150px;
+    --default-layout-horizontal-spacer: 24px;
 }
 
 * {
@@ -21,7 +24,7 @@ html {
 }
 
 body {
-    font-family: 'IBM Plex Sans';
+    font-family: 'IBM Plex Sans', 'sans-serif';
     font-size: 1.6rem;
     line-height: 1.5rem;
     text-rendering: optimizeSpeed; // tối ưu để hiển thị font chữ
@@ -38,4 +41,28 @@ button,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+// custom css tippy conten
+
+body {
+    .tippy-box {
+        background-color: rgba(84, 84, 84, 0.92);
+        border-radius: 8px;
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        font-weight: 600;
+    }
+
+    .tippy-arrow {
+        color: rgba(84, 84, 84, 0.92);
+    }
+
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow:before {
+        top: -8px;
+    }
+
+    .tippy-content {
+        padding: 8px 9px;
+    }
 }

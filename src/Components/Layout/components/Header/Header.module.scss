@@ -13,95 +13,69 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 var(--default-layout-horizontal-spacer);
 }
 
-.logo {
-}
-
-.search {
-    --search-height: 46px;
-    --top-space: 9px;
-    width: 361px;
-    height: var(--search-height);
-    position: relative;
-    background-color: #f1f1f2;
-    border-radius: var(--search-border-radius);
+// action
+.action {
     display: flex;
     align-items: center;
-    padding-left: 16px;
-    border: 1px solid transparent;
-    &:focus-within {
-        border-color: rgba(
-            22,
-            24,
-            35,
-            0.2
-        ); // khi ta focus vào thì sẽ hiện border
+
+    .btn-upload {
+        border: 1px solid rgba(208, 208, 208, 0.5);
+        border-radius: 0;
+        width: 90px;
+        margin-right: 12px;
+        &:hover {
+            background-color: rgba(231, 231, 231, 0.5);
+        }
+    }
+
+    .action-wrap {
+        display: flex;
+        align-items: center;
     }
 }
 
-.input {
-    border: none;
-    outline: none;
-    background-color: unset;
-    font-size: 1.6rem;
-    color: #828282;
-    padding: 12px 0;
-    flex: 1;
-    caret-color: var(--primary-Color);
-    &:not(:placeholder-shown) ~ .search-btn {
-        color: var(--text-color);
-    }
+.more-btn {
+    font-size: 2rem;
+    margin-left: 28px;
+    background-color: transparent;
+    padding: 8px;
+    cursor: pointer;
 }
 
-.clear,
-.loading {
-    position: absolute;
-    right: 52px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
-    color: rgb(166, 167, 171);
-    padding-right: 14px;
-}
-
-.clear {
-    &:hover {
-        cursor: pointer;
-    }
-}
-
-.loading {
-    display: none;
-}
-
-.search-btn {
+.action-btn {
+    background-color: transparent;
     position: relative;
-    width: 52px;
-    height: 100%;
-    outline: none;
-    border: none;
-    border-top-right-radius: var(--search-border-radius);
-    border-bottom-right-radius: var(--search-border-radius);
-    font-size: 1.8rem;
-    color: rgba(22, 24, 35, 0.3);
-    &:hover {
-        background-color: rgb(225, 223, 223);
-        cursor: pointer;
-    }
+    top: 3px;
+    color: #262730;
+    padding: 4px 10px;
+    cursor: pointer;
 
-    &::before {
+    .badge {
         position: absolute;
-        left: 0;
-        top: var(--top-space);
-        display: block;
-        content: '';
-        width: 1px;
-        height: calc(var(--search-height) - var(--top-space) * 2);
-        background-color: rgba(22, 24, 35, 0.12);
+        top: -3px;
+        right: 0px;
+        padding: 0px 6px;
+        height: 2rem;
+        line-height: 2rem;
+        border-radius: 10px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--white);
+        font-family: 'ProximaNova', sans-serif;
+        background-color: var(--primary-Color);
+        color: var(--white-color);
     }
+}
 
-    &:active {
-        background-color: rgba(22, 24, 35, 0.06);
-    }
+.user-avata {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 12px;
+    cursor: pointer;
+    overflow: hidden;
 }

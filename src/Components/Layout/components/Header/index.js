@@ -1,14 +1,108 @@
+import { Fragment } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
+
 import {
-    faCircleXmark,
-    faSpinner,
-    faMagnifyingGlass,
+    faEllipsisVertical,
+    faEarthAsia,
+    faCircleQuestion,
+    faKeyboard,
+    faCoins,
+    faGear,
+    faUser,
+    faArrowRightFromBracket,
+    faAdd,
 } from '@fortawesome/free-solid-svg-icons';
 import styles from './Header.module.scss';
-import { act } from 'react-dom/test-utils';
+import Button from '~/Components/Button';
+import Menu from '~/Components/Popper/menu';
+import { InboxIcon, UpdateIcon } from '~/Components/icon';
+import Search from '~/Components/Layout/components/search';
+import Image from '~/Components/image';
 const cx = classNames.bind(styles);
+
+const MENU_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faEarthAsia}></FontAwesomeIcon>,
+        title: 'English',
+        // qui ước cứ có children thì là sub menu có nhiều cấp
+        children: {
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestion}></FontAwesomeIcon>,
+        title: 'Feedback and help',
+        to: '/feedback',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faKeyboard}></FontAwesomeIcon>,
+        title: 'Keyboard shortcuts',
+    },
+];
 function Header() {
+    // user
+    const currentUser = true;
+
+    // handle logic
+    const handleMenuChange = (menuItem) => {
+        switch (menuItem.type) {
+            case 'language':
+                // handle change language
+                console.log(menuItem);
+                break;
+            default:
+        }
+    };
+
+    const userMenu = [
+        {
+            icon: <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>,
+            title: 'Wiew Profile',
+            to: '/@maiphong',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faCoins}></FontAwesomeIcon>,
+            title: 'Get Coins',
+            to: '/coins',
+        },
+        {
+            icon: <FontAwesomeIcon icon={faGear}></FontAwesomeIcon>,
+            title: 'Settings',
+            to: '/settings',
+        },
+        ...MENU_ITEMS,
+        {
+            icon: (
+                <FontAwesomeIcon
+                    icon={faArrowRightFromBracket}
+                ></FontAwesomeIcon>
+            ),
+            title: 'Log out',
+            to: '/feedback',
+            separate: true,
+        },
+    ];
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('content')}>
@@ -54,26 +148,69 @@ function Header() {
                         ></path>
                     </svg>
                 </div>
-                <div className={cx('search')}>
-                    <input
-                        placeholder="Search accounts and videos "
-                        spellCheck={false}
-                        className={cx('input')}
-                    />
-                    <button className={cx('clear')}>
-                        <FontAwesomeIcon icon={faCircleXmark}></FontAwesomeIcon>
-                    </button>
-                    <FontAwesomeIcon
-                        icon={faSpinner}
-                        className={cx('loading')}
-                    ></FontAwesomeIcon>
-                    <button className={cx('search-btn')}>
-                        <FontAwesomeIcon
-                            icon={faMagnifyingGlass}
-                        ></FontAwesomeIcon>
-                    </button>
+                {/* search */}
+                <Search></Search>
+
+                <div className={cx('action')}>
+                    {currentUser ? (
+                        <div className={cx('action-wrap')}>
+                            <Tippy
+                                delay={[0, 200]}
+                                content="Upload"
+                                placement="bottom"
+                            >
+                                <Button
+                                    className={cx('btn-upload')}
+                                    outline
+                                    leftIcon={
+                                        <FontAwesomeIcon
+                                            icon={faAdd}
+                                        ></FontAwesomeIcon>
+                                    }
+                                >
+                                    Upload
+                                </Button>
+                            </Tippy>
+
+                            <Tippy delay={[0, 200]} content="Message">
+                                <button className={cx('action-btn')}>
+                                    <UpdateIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy content="Inbox" delay={[0, 200]}>
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
+                                    <span className={cx('badge')}>27</span>
+                                </button>
+                            </Tippy>
+                        </div>
+                    ) : (
+                        <Fragment>
+                            <Button text>Up load</Button>
+                            <Button primary>Log in</Button>
+                        </Fragment>
+                    )}
+
+                    <Menu
+                        items={currentUser ? userMenu : MENU_ITEMS}
+                        onChange={handleMenuChange}
+                    >
+                        {currentUser ? (
+                            <Image
+                                src="222https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhxORZ-FrxBpu-6x3qupT-twCGq_8ZT36DsQ&usqp=CAU"
+                                alt="Nguyen A"
+                                className={cx('user-avata')}
+                                fallBack="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+                            />
+                        ) : (
+                            <button className={cx('more-btn')}>
+                                <FontAwesomeIcon
+                                    icon={faEllipsisVertical}
+                                ></FontAwesomeIcon>
+                            </button>
+                        )}
+                    </Menu>
                 </div>
-                <div className={cx('action')}></div>
             </div>
         </header>
     );
