@@ -11,6 +11,9 @@
     --default-layout-header-height: 60px;
     --default-layout-width-content: 1150px;
     --default-layout-horizontal-spacer: 24px;
+
+    // font
+    --font-family: 'IBM Plex Sans', 'sans-serif';
 }
 
 * {
@@ -24,11 +27,12 @@ html {
 }
 
 body {
-    font-family: 'IBM Plex Sans', 'sans-serif';
+    font-family: var(--font-family);
     font-size: 1.6rem;
     line-height: 1.5rem;
     text-rendering: optimizeSpeed; // tối ưu để hiển thị font chữ
     color: var(--text-color);
+    overflow-y: overlay;
 }
 
 input,
@@ -44,7 +48,6 @@ a[href] {
 }
 
 // custom css tippy conten
-
 body {
     .tippy-box {
         background-color: rgba(84, 84, 84, 0.92);

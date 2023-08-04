@@ -19,7 +19,7 @@
         right: 8px;
         display: block;
         content: '';
-        border-width: 10px 13px;
+        border-width: 6px 13px;
         border-color: transparent transparent var(--white-color) transparent;
         border-style: solid;
         box-shadow: inset 2px 3px 10px rgba(0, 0, 0, 0.5);
@@ -28,9 +28,40 @@
 
 .menu-popper {
     padding-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-body {
+    overflow-y: auto;
+}
+
+// scollbar
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-user-select: unset;
+    -moz-user-select: unset;
+    -ms-user-select: unset;
+    user-select: unset;
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(22, 24, 35, 0.06);
+}
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 // Menu item
+
 .menu-item {
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);
@@ -45,6 +76,7 @@
     position: relative;
     height: 50px;
     margin-top: -8px;
+    flex-shrink: 0;
 }
 
 .back-btn {
