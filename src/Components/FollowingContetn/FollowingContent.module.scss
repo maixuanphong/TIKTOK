@@ -1,0 +1,10 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    width: calc(100vw - var(--default-with-sidebar));
+    margin-left: 30px;
+    margin-right: 20px;
+}

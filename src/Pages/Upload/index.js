@@ -1,5 +1,13 @@
+import classNames from 'classnames/bind';
+import styles from './Upload.module.scss';
+import UploadContent from '~/Components/UploadContent/UploadContent';
+const cx = classNames.bind(styles);
 function Upload() {
-    return <h1>Upload Pages</h1>;
+    return (
+        <div className={cx('wrapper')}>
+            <UploadContent></UploadContent>
+        </div>
+    );
 }
 
 export default Upload;

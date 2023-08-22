@@ -1,0 +1,32 @@
+.wrapper {
+    padding: 20px 0px;
+    border-top: 1px solid #e3e3e4;
+    color: #161823bf;
+}
+
+.title {
+    font-size: 1.4rem;
+    color: #161823bf;
+    font-weight: 600;
+}
+
+.discover-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.discover-item {
+    margin-top: 6px;
+    font-size: 1.4rem;
+    border-color: #bababdbf;
+    border-radius: 50px;
+    padding: 1px 16px;
+    margin-left: 0px !important;
+    margin-right: 8px;
+}
+
+.discover-title {
+    margin-left: -14px;
+    color: #161823bf;
+}

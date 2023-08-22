@@ -19,7 +19,6 @@ function Menu({
 }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
-    console.log(current);
     const renderItem = () => {
         return current.data.map((item, index) => {
             const isParent = !!item.children;
@@ -42,6 +41,29 @@ function Menu({
             );
         });
     };
+
+    // back when click
+    const handleBack = () => {
+        setHistory((prev) => {
+            return prev.slice(0, prev.length - 1);
+        });
+    };
+
+    const renderResult = (attrs) => (
+        <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
+            <PopperWrapper className={cx('menu-popper')}>
+                {history.length > 1 && (
+                    <Header title={current.title} onBack={handleBack}></Header>
+                )}
+                <div className={cx('menu-body')}>{renderItem()}</div>
+            </PopperWrapper>
+        </div>
+    );
+
+    // reset to first page
+    const handleResetToFirstPage = () => {
+        setHistory((preState) => preState.slice(0, 1));
+    };
     return (
         <Tippy
             hideOnClick={hideOnClick}
@@ -49,26 +71,8 @@ function Menu({
             delay={[0, 500]}
             interactive
             placement="bottom-end"
-            render={(attrs) => (
-                <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper className={cx('menu-popper')}>
-                        {history.length > 1 && (
-                            <Header
-                                title={current.title}
-                                onBack={() => {
-                                    setHistory((prev) => {
-                                        return prev.slice(0, prev.length - 1);
-                                    });
-                                }}
-                            ></Header>
-                        )}
-                        <div className={cx('menu-body')}>{renderItem()}</div>
-                    </PopperWrapper>
-                </div>
-            )}
-            onHide={() => {
-                setHistory((preState) => preState.slice(0, 1));
-            }}
+            render={renderResult}
+            onHide={handleResetToFirstPage}
         >
             {children}
         </Tippy>

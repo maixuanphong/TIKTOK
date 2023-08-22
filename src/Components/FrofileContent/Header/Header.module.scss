@@ -1,0 +1,117 @@
+.wrapper {
+    display: flex;
+    max-width: 624px;
+}
+
+.infor-wrap {
+    flex: 1;
+}
+
+.infor {
+    display: flex;
+}
+
+.avata {
+    width: 116px;
+    height: 116px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.infor-other {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1px 0;
+}
+
+.nick-name-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.nick-name {
+    font-size: 3.2rem;
+    color: #161823;
+    line-height: 3.2rem;
+}
+
+.icon-tick {
+    font-size: 2rem;
+    color: rgb(32, 213, 236);
+    margin-left: 6px;
+}
+
+.full-name {
+    font-size: 1.8rem;
+    color: #161823;
+    font-weight: 500;
+}
+
+.follow-btn {
+    padding: 6px 20px;
+    width: 180px;
+}
+
+.user-follow {
+    display: flex;
+}
+
+.name-user-follow {
+    margin-top: 30px;
+    padding-right: 20px;
+    color: #161823bf;
+    font-size: 1.6rem;
+}
+
+.quantity-user-follow {
+    font-size: 1.8rem;
+    color: #161823;
+    padding-right: 6px;
+}
+
+.bio {
+    margin-top: 14px;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.link-infor {
+    display: flex;
+    padding-top: 10px;
+    font-size: 1.6rem;
+    color: #333;
+    font-weight: 500;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.more-share {
+    display: flex;
+}
+
+.wrap-share-function {
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.share-function {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    &:hover {
+        background-color: #f6f4f4;
+    }
+}
+
+.share-function-icon {
+}
+
+.share-function-name {
+    padding-left: 8px;
+}
+
+.icon-wrapper {
+    margin-right: 16px;
+}

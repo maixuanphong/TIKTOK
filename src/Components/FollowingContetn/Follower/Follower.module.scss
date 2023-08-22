@@ -1,0 +1,54 @@
+.wrapper {
+    position: relative;
+    width: 210px;
+    height: 302px;
+    border-radius: 6px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.video {
+    width: 210px;
+    height: 302px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.infor {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.avata {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.full-name {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.nick-name {
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+.btn-follow {
+    margin-top: 10px;
+    padding: 10px 50px;
+}

@@ -1,0 +1,29 @@
+.wrapper {
+    position: fixed;
+    width: var(--default-with-sidebar);
+    padding: 10px 8px 26px 8px;
+    max-height: calc(100vh - var(--default-layout-header-height));
+    overflow-y: hidden;
+    flex-shrink: 0;
+    &:hover {
+        overflow-y: overlay;
+    }
+}
+
+.login {
+    border-top: 1px solid rgb(227, 227, 228);
+    padding: 20px 0;
+}
+
+.title-login {
+    font-size: 1.6rem;
+    color: #16182380;
+    line-height: 2rem;
+}
+
+.btn-login {
+    margin-top: 20px;
+    width: 100%;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}

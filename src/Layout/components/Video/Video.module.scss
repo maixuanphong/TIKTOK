@@ -1,0 +1,140 @@
+.wrapper {
+    margin-top: 18px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(227, 227, 228);
+    margin-left: 170px;
+}
+
+.header {
+    display: flex;
+}
+
+.avata {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    margin-right: 14px;
+}
+
+.infor {
+    flex: 1;
+}
+
+.name {
+    display: flex;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    align-items: flex-end;
+}
+
+.user-name {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-right: 4px;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.full-name {
+    line-height: 1.2rem;
+    font-size: 1.4rem;
+    color: #161823bf;
+}
+
+.cap {
+    font-size: 1.6rem;
+    color: #161823bf;
+}
+
+.music {
+    padding-top: 20px;
+}
+
+.name-music {
+    padding-left: 8px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.follows {
+}
+
+// content
+
+.content {
+    margin-left: 70px;
+    margin-top: 30px;
+    display: flex;
+}
+
+.video-wrapper {
+    position: relative;
+    &:hover .icon-play-pause {
+        display: inline-flex;
+    }
+}
+
+.video {
+    border-radius: 8px;
+    max-height: 579px;
+    max-width: 579px;
+    min-width: 288px;
+    object-fit: cover;
+}
+
+.icon-play-pause {
+    position: absolute;
+    bottom: 26px;
+    left: 18px;
+    display: inline-flex;
+    display: none;
+}
+
+.icon-volumn {
+    position: absolute;
+    bottom: 26px;
+    right: 18px;
+    display: inline-flex;
+}
+
+.icon-feature {
+    color: #fff;
+}
+
+.feature {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+    width: 48px;
+    height: 48px;
+    background-color: rgb(241, 241, 242);
+    border-radius: 50%;
+}
+
+.feature-quantity {
+    font-size: 1.2rem;
+    color: #161823bf;
+}

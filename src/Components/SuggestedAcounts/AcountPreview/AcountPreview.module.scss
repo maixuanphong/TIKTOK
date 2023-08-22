@@ -1,0 +1,62 @@
+.wrapper {
+    display: block;
+    padding: 20px;
+    width: 320px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avata {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.btn {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.body {
+    margin-top: 20px;
+    color: #161823bf;
+}
+
+.nickname {
+    font-size: 1.8rem;
+}
+
+.icon {
+    padding-left: 4px;
+    color: #20d5ec;
+    font-size: 1.4rem;
+}
+
+.name {
+    font-size: 1.4rem;
+    margin: 8px 0;
+}
+
+.analists {
+    font-size: 1.6rem;
+    margin-top: 12px;
+}
+
+.value ~ .value {
+    padding-left: 12px;
+}
+
+.label {
+    color: #686a7afb;
+}
+
+.value {
+}
+
+.label {
+}

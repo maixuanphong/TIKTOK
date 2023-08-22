@@ -1,0 +1,6 @@
+.wrapper {
+    max-width: calc(100% - var(--default-with-sidebar));
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+}

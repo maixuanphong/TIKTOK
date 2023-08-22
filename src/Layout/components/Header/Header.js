@@ -1,4 +1,5 @@
-import { Fragment } from 'react';
+import { Fragment, useRef, useState } from 'react';
+import { forwardRef } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
@@ -18,11 +19,12 @@ import { Link } from 'react-router-dom';
 import config from '~/config';
 
 import styles from './Header.module.scss';
-import Button from '~/Components/Button/button';
+import Button from '~/Components/Button';
 import Menu from '~/Components/Popper/menu/Menu';
 import { InboxIcon, UpdateIcon } from '~/Components/icon/icon';
 import Search from '~/Layout/components/search/Search';
 import Image from '~/Components/image/image';
+import Login from '~/Components/Login/Login';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -203,7 +205,12 @@ const MENU_ITEMS = [
 ];
 function Header() {
     // user
-    const currentUser = true;
+    const currentUser = false;
+    // islogin
+    const [isLogin, setIsLogin] = useState(false);
+
+    //loginRef
+    const loginRef = useRef();
 
     // handle logic
     const handleMenuChange = (menuItem) => {
@@ -329,10 +336,30 @@ function Header() {
                             </Tippy>
                         </div>
                     ) : (
-                        <Fragment>
-                            <Button text>Up load</Button>
-                            <Button primary>Log in</Button>
-                        </Fragment>
+                        <Link to={'/upload'}>
+                            <Button
+                                className={cx('btn-upload')}
+                                outline
+                                leftIcon={
+                                    <FontAwesomeIcon
+                                        icon={faAdd}
+                                    ></FontAwesomeIcon>
+                                }
+                            >
+                                Upload
+                            </Button>
+                            <Button
+                                primary
+                                to="/"
+                                href="/"
+                                onClick={() => {
+                                    setIsLogin(true);
+                                }}
+                                ref={loginRef}
+                            >
+                                Log in
+                            </Button>
+                        </Link>
                     )}
 
                     <Menu
@@ -356,8 +383,9 @@ function Header() {
                     </Menu>
                 </div>
             </div>
+            {isLogin && <Login isLogin={isLogin} loginRef={loginRef}></Login>}
         </header>
     );
 }
 
-export default Header;
+export default forwardRef(Header);

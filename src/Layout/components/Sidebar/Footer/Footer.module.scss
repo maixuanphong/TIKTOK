@@ -1,0 +1,22 @@
+.wrapper {
+    padding-top: 20px;
+    border-top: 1px solid #e3e3e4;
+}
+
+.link-item,
+.code {
+    font-size: 1.2rem;
+    color: rgba(22, 24, 35, 0.502);
+    margin-right: 8px;
+    display: inline-flex;
+    margin-top: 12px;
+}
+
+.link-item:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.code:hover {
+    cursor: default;
+}

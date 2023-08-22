@@ -12,7 +12,7 @@
 .search {
     --search-height: 46px;
     --top-space: 9px;
-    width: 361px;
+    width: 470px;
     height: var(--search-height);
     position: relative;
     background-color: #f1f1f2;
@@ -37,7 +37,8 @@
     background-color: unset;
     font-size: 1.6rem;
     color: #828282;
-    padding: 12px 0;
+    padding: 12px 40px 12px 0;
+
     flex: 1;
     caret-color: var(--primary-Color);
     &:not(:placeholder-shown) ~ .search-btn {
