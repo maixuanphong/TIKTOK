@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useContext } from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTippy from '@tippyjs/react/headless';
@@ -8,7 +8,6 @@ import Image from '../image/image';
 import styles from './SuggestedAcounts.module.scss';
 import { Wrapper as PopperWrapper } from '../Popper';
 import AcountPreview from './AcountPreview/AcountPreview';
-import { PropsContext } from './SuggestedAcounts';
 import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
@@ -56,5 +55,9 @@ function AcountItems({ data }) {
         </div>
     );
 }
+
+AcountItems.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 
 export default AcountItems;

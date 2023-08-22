@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 import styles from './Content.module.scss';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -102,5 +103,9 @@ function Content({ user }) {
         </div>
     );
 }
+
+Content.propTypes = {
+    user: PropTypes.object.isRequired,
+};
 
 export default Content;

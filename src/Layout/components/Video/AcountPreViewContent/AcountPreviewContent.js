@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import styles from './AcountPreviewContent.module.scss';
 import Image from '~/Components/image/image';
-import Button from '~/Components/Button/Button';
+import Button from '~/Components/Button';
 
 const cx = classNames.bind(styles);
 

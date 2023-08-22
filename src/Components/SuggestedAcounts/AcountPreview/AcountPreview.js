@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import styles from './AcountPreview.module.scss';
 import Image from '~/Components/image/image';
 import Button from '~/Components/Button/Button';
-import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
@@ -43,5 +43,9 @@ function AcountPreview({ data }) {
         </Link>
     );
 }
+
+AcountPreview.propTypes = {
+    data: PropTypes.object.isRequired,
+};
 
 export default AcountPreview;

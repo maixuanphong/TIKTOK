@@ -1,11 +1,11 @@
 import classNames from 'classnames/bind';
 import styles from './Video.module.scss';
-import {
-    NoVolumnIcon,
-    PauseIcon,
-    PlayIcon,
-    VolumnIcon,
-} from '~/Components/icon';
+// import {
+//     NoVolumnIcon,
+//     PauseIcon,
+//     PlayIcon,
+//     VolumnIcon,
+// } from '~/Components/icon';
 import { useRef, useState, useEffect } from 'react';
 const cx = classNames.bind(styles);
 

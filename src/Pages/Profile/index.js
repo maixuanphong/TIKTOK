@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import FrofileContent from '~/Components/FrofileContent/FrofileContent';
 import * as UserServices from '~/services/userService';
-import * as VideosServices from '~/services/VideoServices';
 function Profile() {
     const params = useParams();
     const [user, setUser] = useState({});

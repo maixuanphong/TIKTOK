@@ -15,11 +15,8 @@ import {
 } from '~/Components/icon';
 import { Wrapper } from '~/Components/Popper';
 
-import { useState } from 'react';
 const cx = classNames.bind(styles);
 function Header({ user }) {
-    const [image, setImage] = useState(user.avatar);
-
     const renderShare = (attrs) => {
         return (
             <div tabIndex="-1" {...attrs}>
@@ -60,16 +57,7 @@ function Header({ user }) {
         <div className={cx('wrapper')}>
             <div className={cx('infor-wrap')}>
                 <div className={cx('infor')}>
-                    <img
-                        className={cx('avata')}
-                        src={user.avatar}
-                        alt=""
-                        onError={() => {
-                            setImage(
-                                'https://i.pinimg.com/originals/ff/a0/9a/ffa09aec412db3f54deadf1b3781de2a.png',
-                            );
-                        }}
-                    />
+                    <img className={cx('avata')} src={user.avatar} alt="" />
 
                     <div className={cx('infor-other')}>
                         <div className={cx('nick-name-wrapper')}>

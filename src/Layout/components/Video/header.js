@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMusic } from '@fortawesome/free-solid-svg-icons';
-import Button from '~/Components/Button/Button';
+import Button from '~/Components/Button';
 import styles from './Video.module.scss';
 import Image from '~/Components/image/image';
 import Tippy from '@tippyjs/react/headless';
